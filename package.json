@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "wtest": "vitest --no-watch"
+    "test": "vitest --no-watch"
   },
   "dependencies": {
     "next": "15.3.1",
