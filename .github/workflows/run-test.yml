@@ -18,3 +18,21 @@ jobs:
 
       - name: Run tests
         run: npm test
+ 
+  deploy:
+    needs: run-linter-and-tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/Github_Actions_CICD_Dmo
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart app || pm2 start npm --name "app" -- start
