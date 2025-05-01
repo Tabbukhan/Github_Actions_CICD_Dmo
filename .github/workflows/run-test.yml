@@ -18,7 +18,6 @@ jobs:
 
       - name: Run tests
         run: npm test
- 
   deploy:
     needs: run-linter-and-tests
     runs-on: ubuntu-latest
