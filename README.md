@@ -38,7 +38,7 @@ This project uses Vitest with a jsdom environment for unit testing React compone
 Check out the workflow runs here:  
 👉 [GitHub Actions CI/CD Demo](https://github.com/Tabbukhan/Github_Actions_CICD_Dmo/actions)
 
-## Deploy on AWS S3 
+## Deploy on AWS EC2 
 
 
 ## 📬 Contact
